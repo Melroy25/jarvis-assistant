@@ -134,7 +134,7 @@ def get_weather(city: str) -> str:
         res = requests.get(
             f"{config.BACKEND_URL}/api/weather",
             params={"city": city},
-            headers={"Authorization": f"Bearer {config.API_TOKEN}"},
+            headers={"Authorization": f"Bearer {config.JARVIS_API_TOKEN}"},
             timeout=10,
         )
         data = res.json()
