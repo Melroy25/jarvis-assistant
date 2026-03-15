@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary JARVIS palette -->
+    <color name="bg_deep_space">#05080F</color>
+    <color name="jarvis_blue">#00D4FF</color>
+    <color name="jarvis_blue_dim">#4400D4FF</color>
+    <color name="jarvis_accent">#0066FF</color>
+    <color name="orb_glow">#2200D4FF</color>
+    <color name="text_primary">#DDFFFFFF</color>
+    <color name="text_secondary">#80FFFFFF</color>
+    <color name="overlay_dark">#CC000000</color>
+    <!-- System -->
+    <color name="colorPrimary">#00D4FF</color>
+    <color name="colorPrimaryDark">#05080F</color>
+    <color name="colorAccent">#0066FF</color>
+</resources>

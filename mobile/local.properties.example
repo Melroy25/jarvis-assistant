@@ -1,0 +1,12 @@
+# Android local.properties — NOT committed to git
+# Add these values before building in Android Studio
+
+# Backend URL (your Vercel deployment or local dev server)
+# Example for local development: http://10.0.2.2:3000 (emulator) or http://192.168.x.x:3000 (device)
+BACKEND_URL=https://your-jarvis-backend.vercel.app
+
+# Shared secret token — must match backend .env JARVIS_API_TOKEN
+JARVIS_API_TOKEN=change-this-to-a-random-secret
+
+# Picovoice Porcupine access key — get from https://picovoice.ai
+PICOVOICE_ACCESS_KEY=

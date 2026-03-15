@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Starfield background drawable — simple dark gradient with a subtle radial glow
+  giving a deep space feel for the JARVIS main screen.
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base dark space -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#05080F" />
+        </shape>
+    </item>
+    <!-- Center radial glow (subtle JARVIS-blue ambient) -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="30%p"
+                android:centerColor="#0D00D4FF"
+                android:endColor="#00000000" />
+        </shape>
+    </item>
+</layer-list>

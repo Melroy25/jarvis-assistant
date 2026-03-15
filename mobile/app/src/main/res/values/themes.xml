@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Full-screen dark immersive theme -->
+    <style name="Theme.Jarvis" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/jarvis_blue</item>
+        <item name="colorPrimaryDark">@color/bg_deep_space</item>
+        <item name="colorAccent">@color/jarvis_accent</item>
+        <item name="android:windowBackground">@color/bg_deep_space</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/bg_deep_space</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
+</resources>

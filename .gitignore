@@ -1,0 +1,40 @@
+# Environment files
+.env
+.env.local
+local.properties
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+.env
+
+# Models
+vosk-model*/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+build/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Android
+.gradle/
+/build/
+*.iml
+.externalNativeBuild
+.cxx
+local.properties
+captures/
+.navigation/
+*.apk
+*.ap_
+*.dex

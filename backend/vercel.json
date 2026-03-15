@@ -1,0 +1,11 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "env": {
+    "OPENAI_API_KEY": "@openai_api_key",
+    "WEATHER_API_KEY": "@weather_api_key",
+    "JARVIS_API_TOKEN": "@jarvis_api_token"
+  }
+}
