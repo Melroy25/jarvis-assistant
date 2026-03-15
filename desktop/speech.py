@@ -132,7 +132,7 @@ def _transcribe_cloud(filename: str) -> str | None:
             response = requests.post(
                 f"{config.BACKEND_URL}/api/transcribe",
                 files=files,
-                headers={"Authorization": f"Bearer {config.API_TOKEN}"},
+                headers={"Authorization": f"Bearer {config.JARVIS_API_TOKEN}"},
                 timeout=30
             )
             response.raise_for_status()

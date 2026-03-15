@@ -17,7 +17,7 @@ def process_command(text: str) -> str:
             f"{config.BACKEND_URL}/api/command",
             json={"text": text, "deviceId": config.DEVICE_ID},
             headers={
-                "Authorization": f"Bearer {config.API_TOKEN}",
+                "Authorization": f"Bearer {config.JARVIS_API_TOKEN}",
                 "Content-Type": "application/json",
             },
             timeout=15,
@@ -36,22 +36,8 @@ def process_command(text: str) -> str:
         params = data.get("parameters", {})
         if intent:
             _dispatch(intent, params)
-        else:
-            import time
-            for action in actions_list:
-                intent = action.get("intent")
-                params = action.get("parameters", {})
-                if intent:
-                    # Small grace period before execution
-                    time.sleep(0.3)
-                    print(f"[JARVIS] ⚙️ Executing: {intent}...")
-                    _dispatch(intent, params)
-                    
-                    # Longer delay for hotkeys (like opening 'Save As' dialog)
-                    if intent == "hotkey":
-                        time.sleep(1.8)
-                    else:
-                        time.sleep(1.0)
+    else:
+        execute_actions(actions_list)
 
     return response_text
 

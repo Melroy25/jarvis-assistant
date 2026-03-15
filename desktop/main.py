@@ -98,9 +98,43 @@ def run_test_mode():
             break
 
 
-if __name__ == "__main__":
-    args = sys.argv[1:]
+def start_remote_poller():
+    """Background thread to poll for remote actions from the cloud backend."""
+    import requests
+    import time
+    from threading import Thread
 
+    def poll_loop():
+        print("[REMOTE] 📡 Remote control bridge active.")
+        url = f"{config.BACKEND_URL}/api/remote"
+        headers = {"Authorization": f"Bearer {config.JARVIS_API_TOKEN}"}
+        
+        while True:
+            try:
+                response = requests.get(url, headers=headers, timeout=10)
+                if response.status_code == 200:
+                    data = response.json()
+                    actions = data.get("actions", [])
+                    if actions:
+                        print(f"\n[REMOTE] 📥 Received {len(actions)} remote actions.")
+                        command_handler.execute_actions(actions)
+                elif response.status_code == 401:
+                    print("\n[REMOTE] ❌ Unauthorized. Check JARVIS_API_TOKEN.")
+                    break
+            except Exception:
+                # Silently ignore network errors during polling
+                pass
+            time.sleep(3)
+
+    thread = Thread(target=poll_loop, daemon=True)
+    thread.start()
+
+
+if __name__ == "__main__":
+    # Start the remote poller bridge
+    start_remote_poller()
+
+    args = sys.argv[1:]
     if "--test" in args:
         run_test_mode()
     elif "--no-wake" in args:

@@ -29,6 +29,23 @@ User: "Save it as Melroy in Drive E" →
   "response_text": "Saving the file as Melroy.txt in Drive E, sir."
 }
 
+**DEVICE CONTEXT:**
+- If **deviceId** starts with "android-", prioritize mobile actions: "alarm", "reminder", "call", "sms", "open_app" (mobile apps like WhatsApp, Instagram, Spotify).
+- If **deviceId** is "desktop-1", prioritize PC actions: "open_app" (Notepad, Chrome), "type_text", "hotkey", "screenshot".
+
+Examples:
+User (Mobile): "Open Instagram" → 
+{
+  "actions": [{"intent":"open_app","parameters":{"app":"Instagram"}}],
+  "response_text": "Opening Instagram for you, sir."
+}
+
+User (Mobile): "Call Melroy" → 
+{
+  "actions": [{"intent":"call","parameters":{"contact":"Melroy"}}],
+  "response_text": "Initiating a call to Melroy, sir."
+}
+
 Always respond with valid JSON only. No extra text outside the JSON.`;
 
 export async function POST(request: NextRequest) {

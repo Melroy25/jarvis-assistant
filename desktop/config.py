@@ -9,7 +9,7 @@ load_dotenv()
 
 # Backend API
 BACKEND_URL: str = os.getenv("BACKEND_URL", "http://localhost:3000")
-API_TOKEN: str = os.getenv("JARVIS_API_TOKEN", "change-this-to-a-random-secret")
+JARVIS_API_TOKEN: str = os.getenv("JARVIS_API_TOKEN", "change-this-to-a-random-secret")
 
 # Picovoice / Porcupine
 PICOVOICE_ACCESS_KEY: str = os.getenv("PICOVOICE_ACCESS_KEY", "")
